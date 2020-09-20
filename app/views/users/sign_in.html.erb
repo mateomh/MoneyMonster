@@ -1,0 +1,14 @@
+<h1>Sign in to see the Events</h1><br>
+<%= form_for(@user,  url: "/access", method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :name, "Enter your name" %><br>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  <br>
+  <div class="actions">
+    <%= form.submit 'Sign In'%>
+  </div>
+<% end %>
+<br>
+New To the page? <b><%= link_to 'Create a New User', new_user_path %></b>
