@@ -6,9 +6,13 @@
 </p>
 
 <p>
-  <strong>Avatar url:</strong>
-  <%= @user.avatar_url %>
+  <img src=<% @user.avatar_url %> />
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p>
+  <button>All My Transactions</button><br>
+  <button>All My External Transactions</button><br>
+  <button>All My Groups</button><br>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>

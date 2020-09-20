@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   
   # Custom endpoints for the app
   post '/access', to: 'access_control#signin'
-  get '/access', to: 'access_control#logout'
+  delete '/access', to: 'access_control#logout'
+
+  get '/mytransactions', to: 'users#my_transactions'
+  get '/myexternal', to: 'users#my_external'
+  get '/mygroups', to: 'users#my_groups'
 
   # Custom root page for the application
   root 'users#index'

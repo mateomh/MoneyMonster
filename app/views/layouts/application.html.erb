@@ -11,7 +11,7 @@
 
   <body>
     <p id="notice"><%= notice %></p>
-    <%= link_to 'Log Out', '/access' %>
+    <%= link_to 'Log Out', '/access', method: 'delete' %>
     <%= yield %>
   </body>
 </html>
