@@ -1,3 +1,6 @@
+<p id="alert"><%= flash.alert %></p>
+<br>
+<br>
 <%= form_with(model: expense, local: true) do |form| %>
   <% if expense.errors.any? %>
     <div id="error_explanation">
@@ -11,10 +14,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.hidden_field :author_id, value: session[:user_id] %>
-  </div>
-
+  <%= form.hidden_field :author_id, value: session[:user_id] %>
+  <%= form.hidden_field :group_id, value: @group %>
   <div class="field">
     <%= form.label :name, value: 'Description of the expense' %>
     <%= form.text_field :name %>

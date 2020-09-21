@@ -1,4 +1,5 @@
 class Expense < ApplicationRecord
+  validates :name, :amount, presence: true
   belongs_to :author, class_name: 'User'
   has_many :groupedtransactions
   has_many :groups, through: :groupedtransactions

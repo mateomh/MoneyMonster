@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   # Custom endpoints for the app
+  get '/expenses/new/:group', to: 'expenses#new'
+
   post '/access', to: 'access_control#signin'
   delete '/access', to: 'access_control#logout'
 
