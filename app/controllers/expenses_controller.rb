@@ -5,7 +5,7 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @user = User.find(session[:user_id])
-    @expenses = @user.expenses.all
+    @expenses = @user.expenses.all.ordered_by_most_recent
   end
 
   # GET /expenses/1

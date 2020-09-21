@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Expenses</h1>
-
+<h1>All <%= session[:user_name]%>'s Expenses</h1>
+<h2>Grand total for expenses: $<%= @expenses.sum(:amount) %></h2>
 <table>
   <thead>
     <tr>
       <th>Author</th>
-      <th>Name</th>
+      <th>Expense Description</th>
       <th>Amount</th>
+      <th>Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= expense.users.name %></td>
         <td><%= expense.name %></td>
         <td><%= expense.amount %></td>
+        <td><%= expense.created_at.strftime('%e-%b-%Y') %></td>
         <td><%= link_to 'Show', expense %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
         <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
