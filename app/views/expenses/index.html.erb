@@ -16,7 +16,7 @@
   <tbody>
     <% @expenses.each do |expense| %>
       <tr>
-        <td><%= expense.users.name %></td>
+        <td><%= expense.author.name %></td>
         <td><%= expense.name %></td>
         <td><%= expense.amount %></td>
         <td><%= expense.created_at.strftime('%e-%b-%Y') %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Expense', new_expense_path %>
+<%= link_to 'New Expense', '/expenses/new/0' %>

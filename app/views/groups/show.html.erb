@@ -2,7 +2,7 @@
 
 <p>
   <strong>Creator:</strong>
-  <%= @group.creator_id %>
+  <%= @group.creator.name %>
 </p>
 
 <p>
@@ -15,5 +15,27 @@
   <%= @group.icon %>
 </p>
 
+<h1>Expenses for this group</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Expense Description</th>
+      <th>Creation Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.name %></td>
+        <td><%= expense.created_at.strftime('%e-%b-%Y') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Create new expense for the group', "/expenses/new/#{@group.id}" %>
+<br>
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

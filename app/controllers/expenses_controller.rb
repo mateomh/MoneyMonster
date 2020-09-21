@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
+    @group = params[:group]
   end
 
   # GET /expenses/1/edit
@@ -24,13 +25,15 @@ class ExpensesController < ApplicationController
   # POST /expenses.json
   def create
     @expense = Expense.new(expense_params)
-
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to @expense, notice: 'Expense was successfully created.' }
+        unless group_param[:group_id].to_i.zero?
+          Groupedtransaction.create(expense_id: @expense.id, group_id: group_param[:group_id])
+        end
+        format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
         format.json { render :show, status: :created, location: @expense }
       else
-        format.html { render :new }
+        format.html { redirect_to "/expenses/new/#{group_param[:group_id]}", alert: 'All the fields must be filled' }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
@@ -70,5 +73,9 @@ class ExpensesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def expense_params
     params.require(:expense).permit(:author_id, :name, :amount)
+  end
+
+  def group_param
+    params.require(:expense).permit(:group_id)
   end
 end

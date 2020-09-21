@@ -5,9 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Creator</th>
-      <th>Name</th>
-      <th>Icon</th>
+      <th>Group Name</th>
+      <th>Creation Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +14,8 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.creator_id %></td>
         <td><%= group.name %></td>
-        <td><%= group.icon %></td>
+        <td><%= group.created_at.strftime('%e-%b-%Y') %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
