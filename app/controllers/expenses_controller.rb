@@ -4,7 +4,8 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+    @user = User.find(session[:user_id])
+    @expenses = @user.expenses.all
   end
 
   # GET /expenses/1

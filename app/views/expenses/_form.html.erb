@@ -12,21 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :author_id %>
-    <%= form.number_field :author_id %>
+    <%= form.hidden_field :author_id, value: session[:user_id] %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, value: 'Description of the expense' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
     <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.number_field :amount %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<%=  %>

@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post '/access', to: 'access_control#signin'
   delete '/access', to: 'access_control#logout'
 
-  get '/mytransactions', to: 'users#my_transactions'
-  get '/myexternal', to: 'users#my_external'
-  get '/mygroups', to: 'users#my_groups'
+  get '/mytransactions', to: 'expenses#index'
+  # get '/myexternal', to: 'expenses#my_external'
+  # get '/mygroups', to: 'groups#my_groups'
 
   # Custom root page for the application
   root 'users#index'
