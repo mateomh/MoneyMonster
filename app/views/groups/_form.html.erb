@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :creator_id %>
-    <%= form.number_field :creator_id %>
-  </div>
+  <%= form.hidden_field :creator_id, value: session[:user_id] %>
 
   <div class="field">
     <%= form.label :name %>
