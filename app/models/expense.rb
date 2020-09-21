@@ -1,4 +1,5 @@
 class Expense < ApplicationRecord
-  belongs_to :users, foreign_key: 'author_id', class_name: 'User'
+  belongs_to :author, class_name: 'User'
+  has_many :groups, through: :groupedtransactions
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 end
