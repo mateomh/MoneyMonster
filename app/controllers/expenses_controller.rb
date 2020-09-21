@@ -26,8 +26,10 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     respond_to do |format|
-      if @expense.save 
-        Groupedtransaction.create(expense_id: @expense.id, group_id: group_param[:group_id]) unless group_param[:group_id].to_i.zero?
+      if @expense.save
+        unless group_param[:group_id].to_i.zero?
+          Groupedtransaction.create(expense_id: @expense.id, group_id: group_param[:group_id])
+        end
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
         format.json { render :show, status: :created, location: @expense }
       else
