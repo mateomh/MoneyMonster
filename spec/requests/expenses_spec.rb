@@ -12,8 +12,8 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe '/users', type: :request do
-  # User. As you add validations to User, be sure to
+RSpec.describe '/expenses', type: :request do
+  # Expense. As you add validations to Expense, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
     skip('Add a hash of attributes valid for your model')
@@ -25,58 +25,58 @@ RSpec.describe '/users', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      User.create! valid_attributes
-      get users_url
+      Expense.create! valid_attributes
+      get expenses_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      user = User.create! valid_attributes
-      get user_url(user)
+      expense = Expense.create! valid_attributes
+      get expense_url(expense)
       expect(response).to be_successful
     end
   end
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_user_url
+      get new_expense_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /edit' do
     it 'render a successful response' do
-      user = User.create! valid_attributes
-      get edit_user_url(user)
+      expense = Expense.create! valid_attributes
+      get edit_expense_url(expense)
       expect(response).to be_successful
     end
   end
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new User' do
+      it 'creates a new Expense' do
         expect do
-          post users_url, params: { user: valid_attributes }
-        end.to change(User, :count).by(1)
+          post expenses_url, params: { expense: valid_attributes }
+        end.to change(Expense, :count).by(1)
       end
 
-      it 'redirects to the created user' do
-        post users_url, params: { user: valid_attributes }
-        expect(response).to redirect_to(user_url(User.last))
+      it 'redirects to the created expense' do
+        post expenses_url, params: { expense: valid_attributes }
+        expect(response).to redirect_to(expense_url(Expense.last))
       end
     end
 
     context 'with invalid parameters' do
-      it 'does not create a new User' do
+      it 'does not create a new Expense' do
         expect do
-          post users_url, params: { user: invalid_attributes }
-        end.to change(User, :count).by(0)
+          post expenses_url, params: { expense: invalid_attributes }
+        end.to change(Expense, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post users_url, params: { user: invalid_attributes }
+        post expenses_url, params: { expense: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -88,42 +88,42 @@ RSpec.describe '/users', type: :request do
         skip('Add a hash of attributes valid for your model')
       end
 
-      it 'updates the requested user' do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: new_attributes }
-        user.reload
+      it 'updates the requested expense' do
+        expense = Expense.create! valid_attributes
+        patch expense_url(expense), params: { expense: new_attributes }
+        expense.reload
         skip('Add assertions for updated state')
       end
 
-      it 'redirects to the user' do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: new_attributes }
-        user.reload
-        expect(response).to redirect_to(user_url(user))
+      it 'redirects to the expense' do
+        expense = Expense.create! valid_attributes
+        patch expense_url(expense), params: { expense: new_attributes }
+        expense.reload
+        expect(response).to redirect_to(expense_url(expense))
       end
     end
 
     context 'with invalid parameters' do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        user = User.create! valid_attributes
-        patch user_url(user), params: { user: invalid_attributes }
+        expense = Expense.create! valid_attributes
+        patch expense_url(expense), params: { expense: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe 'DELETE /destroy' do
-    it 'destroys the requested user' do
-      user = User.create! valid_attributes
+    it 'destroys the requested expense' do
+      expense = Expense.create! valid_attributes
       expect do
-        delete user_url(user)
-      end.to change(User, :count).by(-1)
+        delete expense_url(expense)
+      end.to change(Expense, :count).by(-1)
     end
 
-    it 'redirects to the users list' do
-      user = User.create! valid_attributes
-      delete user_url(user)
-      expect(response).to redirect_to(users_url)
+    it 'redirects to the expenses list' do
+      expense = Expense.create! valid_attributes
+      delete expense_url(expense)
+      expect(response).to redirect_to(expenses_url)
     end
   end
 end

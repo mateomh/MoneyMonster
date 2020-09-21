@@ -5,7 +5,7 @@ class AccessControlController < ApplicationController
       flash.notice = "User doesn't exists"
       redirect_to users_path
     else
-      session[:username] = params[:user][:name]
+      session[:user_name] = params[:user][:name]
       session[:user_id] = valid_user[0].id
       session[:avatar] = valid_user[0].avatar_url
       flash.notice = "Welcome back #{session[:username]}"
