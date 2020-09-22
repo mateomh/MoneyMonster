@@ -3,10 +3,13 @@
     Money Monster
   </div>
   <div class="button-section">
-    <a href="/users"><span class="pseudo-button med-blue">Sign In</span></a>
-    
+    <%= link_to "/users" do%>
+      <span class="pseudo-button med-blue">Sign In</span></a>
+    <% end %>
   </div>
   <div class="button-section">
-    <a href="/users/new"><span class="pseudo-button orange">Register</span></a>
+    <%= link_to "/users/new" do%>
+      <span class="pseudo-button orange">Register</span></a>
+    <% end %>
   </div>
 </div>
