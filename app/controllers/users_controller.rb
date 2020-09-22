@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @user = User.new
-    render 'sign_in'
+    render 'layouts/main'
   end
 
   # GET /users/1

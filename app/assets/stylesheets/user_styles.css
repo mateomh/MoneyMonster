@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.welcome-view {
+  display: flex;
+  border: 1px solid goldenrod;
+  flex-direction: column;
+  height: 90vh;
+  align-items: stretch;
+  text-align: center;
+}
+
+.main-title {
+  height: 70%;
+  padding-top: 20%;
+  font-size: 7rem;
+  border: 1px solid green;
+}
+
+.button-section {
+  height: 15%;
+  border: 1px solid green;
+  padding-top: 3%;
+}
