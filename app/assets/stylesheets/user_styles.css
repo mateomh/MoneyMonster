@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color1: #120136;
+  --color2: #035aa6;
+  --color3: #40bad5;
+  --color4: #fcbf1e;
+  --color5: #79d70f;
+}
+
 .welcome-view {
   display: flex;
   border: 1px solid goldenrod;
