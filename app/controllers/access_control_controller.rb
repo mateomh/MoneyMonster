@@ -16,6 +16,6 @@ class AccessControlController < ApplicationController
   def logout
     session.destroy
     flash.notice = 'Logged out successfully'
-    redirect_to users_path
+    redirect_to root_path
   end
 end
