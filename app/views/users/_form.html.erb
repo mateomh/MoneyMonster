@@ -1,3 +1,4 @@
+<div class="main-space">
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +13,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "text-label" %><br>
+    <%= form.text_field :name, class: "text-input" %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :avatar_url %>
-    <%= form.text_field :avatar_url %>
+    <%= form.label :avatar_url, class: "text-label" %><br>
+    <%= form.text_field :avatar_url, class: "text-input" %>
   </div>
-
+  <br>
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Register', :class => "pseudo-button orange" %>
   </div>
 <% end %>
+</div>
