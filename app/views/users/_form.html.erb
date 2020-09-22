@@ -13,17 +13,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, class: "text-label" %><br>
+    <%= form.label :name, class: "text-label font-med-blue" %><br>
     <%= form.text_field :name, class: "text-input" %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :avatar_url, class: "text-label" %><br>
+    <%= form.label :avatar_url, class: "text-label font-med-blue" %><br>
     <%= form.text_field :avatar_url, class: "text-input" %>
   </div>
   <br>
   <br>
-  <div class="actions">
+  <div class="actions new-expense">
     <%= form.submit 'Register', :class => "pseudo-button orange" %>
   </div>
 <% end %>
