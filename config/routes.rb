@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   delete '/access', to: 'access_control#logout'
 
   get '/mytransactions', to: 'expenses#index'
-  # get '/myexternal', to: 'expenses#my_external'
+  get '/myexternal', to: 'expenses#my_external'
   # get '/mygroups', to: 'groups#my_groups'
 
   # Custom root page for the application
