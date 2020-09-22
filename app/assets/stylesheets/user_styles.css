@@ -14,6 +14,26 @@
   --color5: #79d70f;
 }
 
+.dark-blue {
+  background-color: var(--color1);
+}
+
+.light-blue {
+  background-color: var(--color3);
+}
+
+.med-blue {
+  background-color: var(--color2);
+}
+
+.green {
+  background-color: var(--color5);
+}
+
+.orange {
+  background-color: var(--color4);
+}
+
 .welcome-view {
   display: flex;
   border: 1px solid goldenrod;
