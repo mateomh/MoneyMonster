@@ -8,6 +8,7 @@
 
 body {
   background-color: gainsboro;
+  text-align: center;
 }
 
 :root {
@@ -67,9 +68,26 @@ a {
   display: inline-block;
   height: 80%;
   width: 80%;
+  border: none;
   color: whitesmoke;
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
   line-height: 75px;
+}
+
+.text-input {
+  border: 1px solid grey;
+  height: 50px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.text-label {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.main-space {
+  padding-top: 20vh;
 }
