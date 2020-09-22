@@ -121,6 +121,9 @@ a {
   height: 50px;
   width: 80%;
   border-radius: 5px;
+  padding: 2vh;
+  font-size: 20px;
+  text-align: center;
 }
 
 .text-label {
@@ -212,4 +215,8 @@ a {
 
 .group-info {
   height: 40vh;
+}
+
+.group {
+  width: 85%;
 }

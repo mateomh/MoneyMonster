@@ -1,29 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+<div class="banner">
+  <h1><%= session[:user_name].capitalize%>'s Groups</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Group Name</th>
-      <th>Creation Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @groups.each do |group| %>
+  <%= link_to group do %></td>
+    <div class="object-display">
+      <img class="object-image" src=<%= group.icon %> alt="" />
+      <div class="object-info group">
+        <h3><%= group.name %></h3>
+        <%= group.created_at.strftime('%e-%b-%Y') %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.created_at.strftime('%e-%b-%Y') %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+<%= link_to new_group_path do %>
+  <span class="pseudo-button green new-expense">New Group</span>
+<% end %>
