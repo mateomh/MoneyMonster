@@ -6,12 +6,21 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: gainsboro;
+}
+
 :root {
   --color1: #120136;
   --color2: #035aa6;
   --color3: #40bad5;
   --color4: #fcbf1e;
   --color5: #79d70f;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 .dark-blue {
@@ -36,7 +45,6 @@
 
 .welcome-view {
   display: flex;
-  border: 1px solid goldenrod;
   flex-direction: column;
   height: 90vh;
   align-items: stretch;
@@ -45,13 +53,23 @@
 
 .main-title {
   height: 70%;
-  padding-top: 20%;
-  font-size: 7rem;
-  border: 1px solid green;
+  font-size: 4rem;
+  padding-top: 30%;
+  line-height: 100px;
 }
 
 .button-section {
   height: 15%;
-  border: 1px solid green;
-  padding-top: 3%;
+  padding-top: 1%;
+}
+
+.pseudo-button {
+  display: inline-block;
+  height: 80%;
+  width: 80%;
+  color: whitesmoke;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 75px;
 }
