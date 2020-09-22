@@ -12,22 +12,9 @@
     <div class="object-amount total-result">
       $<%= @expenses.sum(:amount) %>
     </div>
-  </div>
-<% @expenses.each do |expense| %>
-  <%= link_to expense do %></td>
-  <div class="object-display">
-    <img class="object-image" src=<%= get_group_icon(expense) %> alt="" />
-    <div class="object-info">
-      <h3><%= expense.name %></h3>
-      <%= expense.created_at.strftime('%e-%b-%Y') %>
-    </div>
-    <div class="object-amount">
-      $<%= expense.amount %>
-    </div>
-  </div>
-  <% end %>
-<% end %>
+</div>
 <br>
+<%= render partial: "layouts/expenselist", locals: { expenses: @expenses } %>
 
 <%= link_to '/expenses/new/0' do %>
   <span class="pseudo-button green new-expense">New Expense</span>
