@@ -91,3 +91,12 @@ a {
 .main-space {
   padding-top: 20vh;
 }
+
+.profile {
+  padding-top: 5vh;
+}
+
+.avatar {
+  width: 50%;
+  border-radius: 100%;
+}
