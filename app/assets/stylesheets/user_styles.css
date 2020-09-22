@@ -9,7 +9,7 @@
 body {
   background-color: gainsboro;
   text-align: center;
-  margin: 0 0 10vh 0;
+  margin: 0 0 15vh 0;
   color: whitesmoke;
 }
 
@@ -32,6 +32,18 @@ a {
 
 .font-green {
   color: var(--color5);
+}
+
+.font-dark-blue {
+  color: var(--color1);
+}
+
+.font-med-blue {
+  color: var(--color2);
+}
+
+.font-light-blue {
+  color: var(--color3);
 }
 
 .dark-blue {
@@ -139,6 +151,7 @@ a {
   text-align: center;
   padding-top: 5vh;
   font-weight: bolder;
+  margin-bottom: 5vh;
 }
 
 .object-display {
@@ -195,4 +208,8 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.group-info {
+  height: 40vh;
 }
