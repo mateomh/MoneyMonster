@@ -9,7 +9,7 @@
 body {
   background-color: gainsboro;
   text-align: center;
-  margin: 0;
+  margin: 0 0 10vh 0;
   color: whitesmoke;
 }
 
@@ -24,6 +24,14 @@ body {
 a {
   text-decoration: none;
   color: whitesmoke;
+}
+
+.font-orange {
+  color: var(--color4);
+}
+
+.font-green {
+  color: var(--color5);
 }
 
 .dark-blue {
@@ -76,19 +84,24 @@ a {
   font-weight: 700;
   font-size: 2rem;
   line-height: 75px;
+
 }
 
 .small-button {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   width: 20%;
   border: none;
-  color: whitesmoke;
   text-align: center;
   font-weight: 700;
   font-size: 20px;
-  padding-top: 3vh;
+  padding-top: 5vh;
+}
+
+.back-button {
+  top: 0;
+  left: 0;
 }
 
 .text-input {
@@ -117,4 +130,69 @@ a {
 .avatar {
   width: 30vh;
   border-radius: 100%;
+}
+
+.banner {
+  background-color: var(--color2);
+  height: 15vh;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 5vh;
+  font-weight: bolder;
+}
+
+.object-display {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 15vh;
+  width: 90%;
+  border: 1px solid grey;
+  margin: 3vh auto;
+  background-color: whitesmoke;
+}
+
+.object-image {
+  width: 15vh;
+  margin: 0;
+}
+
+.object-info {
+  display: inline-block;
+  width: 50%;
+  padding-top: 5vh;
+  padding-left: 5%;
+  color: grey;
+}
+
+.object-amount {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  padding-top: 7vh;
+  font-weight: bolder;
+  color: green;
+  font-size: 16px;
+}
+
+.total-amount {
+  height: 10vh;
+  width: 100%;
+}
+
+.total {
+  width: 60%;
+  padding-top: 3vh;
+}
+
+.total-result {
+  width: 40%;
+  padding-top: 3vh;
+  font-size: 20px;
+}
+
+.new-expense {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

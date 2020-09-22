@@ -1,33 +1,34 @@
 <p id="notice"><%= notice %></p>
-
-<h1>All <%= session[:user_name]%>'s Expenses</h1>
-<h2>Grand total for expenses: $<%= @expenses.sum(:amount) %></h2>
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Expense Description</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.author.name %></td>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.created_at.strftime('%e-%b-%Y') %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= link_to "/users/#{session[:user_id]}" do %>
+  <span class="small-button back-button font-green">Profile</span>
+<% end %>
+<div class="banner">
+  <h1>All <%= session[:user_name]%>'s Expenses</h1>
+</div>
+<div class="object-display total-amount">
+    <div class="object-info total">
+      <h2>Grand total for expenses:</h2>
+    </div>
+    <div class="object-amount total-result">
+      $<%= @expenses.sum(:amount) %>
+    </div>
+  </div>
+<% @expenses.each do |expense| %>
+  <%= link_to expense do %></td>
+  <div class="object-display">
+    <img class="object-image" src=<%= get_group_icon(expense) %> alt="" />
+    <div class="object-info">
+      <h3><%= expense.name %></h3>
+      <%= expense.created_at.strftime('%e-%b-%Y') %>
+    </div>
+    <div class="object-amount">
+      $<%= expense.amount %>
+    </div>
+  </div>
+  <% end %>
+<% end %>
 <br>
 
-<%= link_to 'New Expense', '/expenses/new/0' %>
+<%= link_to '/expenses/new/0' do %>
+  <span class="pseudo-button green new-expense">New Expense</span>
+<% end %>
