@@ -78,6 +78,19 @@ a {
   line-height: 75px;
 }
 
+.small-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  border: none;
+  color: whitesmoke;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  padding-top: 3vh;
+}
+
 .text-input {
   border: 1px solid grey;
   height: 50px;
@@ -96,7 +109,7 @@ a {
 
 .profile {
   padding-top: 5vh;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   background: radial-gradient(farthest-corner at 90% 10%, var(--color1), var(--color2))
 }
