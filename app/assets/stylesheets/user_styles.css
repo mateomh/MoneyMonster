@@ -9,6 +9,8 @@
 body {
   background-color: gainsboro;
   text-align: center;
+  margin: 0;
+  color: whitesmoke;
 }
 
 :root {
@@ -66,7 +68,7 @@ a {
 
 .pseudo-button {
   display: inline-block;
-  height: 80%;
+  height: 10vh;
   width: 80%;
   border: none;
   color: whitesmoke;
@@ -94,9 +96,12 @@ a {
 
 .profile {
   padding-top: 5vh;
+  height: 90vh;
+  width: 100%;
+  background: radial-gradient(farthest-corner at 90% 10%, var(--color1), var(--color2))
 }
 
 .avatar {
-  width: 50%;
+  width: 30vh;
   border-radius: 100%;
 }
