@@ -4,6 +4,7 @@
 <% end %>
 <div class="banner group-info">
   <img class="object-image" src=<%= @group.icon %> alt="" />
+  <br><br>
   <h1>Group: <%= @group.name %></h1>
   <br>
   <h3>Created by: <%= @group.creator.name%></h3>
@@ -16,5 +17,5 @@
 <%= render partial: "layouts/expenselist", locals: { expenses: @group_expenses } %>
 
 <%= link_to "/expenses/new/#{@group.id}" do %>
-  <span class="pseudo-button green new-expense">New Expense for <%= @group.name %></span>
+  <span class="pseudo-button green new-expense">New Expense</span>
 <% end %>

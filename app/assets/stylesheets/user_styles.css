@@ -11,6 +11,7 @@ body {
   text-align: center;
   margin: 0 0 15vh 0;
   color: whitesmoke;
+  font-family: 'Rubik', sans-serif;
 }
 
 :root {
@@ -69,20 +70,21 @@ a {
 .welcome-view {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 85vh;
   align-items: stretch;
   text-align: center;
 }
 
 .main-title {
-  height: 70%;
-  font-size: 4rem;
+  height: 70vh;
+  font-size: 6rem;
   padding-top: 20vh;
   line-height: 100px;
+  font-family: 'Parisienne', cursive;
 }
 
 .button-section {
-  height: 15%;
+  height: 15vh;
   padding-top: 1%;
 }
 
