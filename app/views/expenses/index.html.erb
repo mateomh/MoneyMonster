@@ -12,7 +12,7 @@
       <h2>Grand total for expenses:</h2>
     </div>
     <div class="object-amount total-result">
-      $<%= @expenses.sum(:amount) %>
+      $<%= ActiveSupport::NumberHelper.number_to_delimited(@expenses.sum(:amount)) %>
     </div>
 </div>
 <br>

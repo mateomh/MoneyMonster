@@ -7,7 +7,7 @@
       <%= expense.created_at.strftime('%e-%b-%Y') %>
     </div>
     <div class="object-amount">
-      $<%= expense.amount %>
+      $<%= ActiveSupport::NumberHelper.number_to_delimited(expense.amount) %>
     </div>
   </div>
   <% end %>
