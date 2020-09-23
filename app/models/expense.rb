@@ -2,6 +2,7 @@ class Expense < ApplicationRecord
   validates :name, :amount, presence: true
   validates :name, format: { with: /[a-zA-Z0-9]/ }
   validates :amount, numericality: true
+  
   belongs_to :author, class_name: 'User'
   has_many :groupedtransactions, dependent: :destroy
   has_many :groups, through: :groupedtransactions
