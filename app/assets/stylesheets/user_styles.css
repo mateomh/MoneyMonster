@@ -103,7 +103,6 @@ a {
   font-weight: 700;
   font-size: 2rem;
   line-height: 75px;
-
 }
 
 .small-button {
@@ -159,7 +158,7 @@ a {
   padding-top: 5vh;
   height: 100vh;
   width: 100%;
-  background: radial-gradient(farthest-corner at 90% 10%, var(--color1), var(--color2))
+  background: radial-gradient(farthest-corner at 90% 10%, var(--color1), var(--color2));
 }
 
 .avatar {

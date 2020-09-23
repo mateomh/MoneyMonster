@@ -1,7 +1,5 @@
 module GroupsHelper
   def groups_rendering(grps)
-    unless grps.nil?
-      render partial: 'groupslist', locals: { groups: grps}
-    end
+    render partial: 'groupslist', locals: { groups: grps } unless grps.nil?
   end
 end
