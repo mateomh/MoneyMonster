@@ -9,7 +9,7 @@
 body {
   background-color: gainsboro;
   text-align: center;
-  margin: 0 0 15vh 0;
+  margin: 0;
   color: whitesmoke;
   font-family: 'Rubik', sans-serif;
 }
@@ -148,7 +148,11 @@ a {
 }
 
 .main-space {
-  padding-top: 10vh;
+  padding-top: 7vh;
+}
+
+.user-form {
+  padding-top: 1vh;
 }
 
 .profile {
@@ -243,4 +247,21 @@ a {
   padding-top: 1vh;
   font-weight: bolder;
   font-size: 18px;
+}
+
+.items-list {
+  padding-bottom: 15vh;
+}
+
+.avatar-img {
+  width: 80px;
+  height: 80px;
+}
+
+.selecting-avatar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  gap: 1vh;
 }

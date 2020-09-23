@@ -1,16 +1,17 @@
 <%= information_rendering %>
 <br>
 <br>
-<div class="main-space">
+<div class="user-form">
 <%= form_with(model: user, local: true) do |form| %>
   <div class="field">
     <%= form.label :name, class: "text-label font-med-blue" %><br>
     <%= form.text_field :name, class: "text-input" %>
   </div>
-  <br>
+  <br><br>
   <div class="field">
-    <%= form.label :avatar_url, class: "text-label font-med-blue" %><br>
-    <%= form.text_field :avatar_url, class: "text-input" %>
+    <%= render partial: 'avatar', locals: {form: form }%>
+    <br>
+    <%= form.label :avatar_url,value: "Select your avatar", class: "text-label font-med-blue" %><br>
   </div>
   <br>
   <br>

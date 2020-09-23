@@ -16,8 +16,9 @@
     </div>
 </div>
 <br>
-<%= render partial: "layouts/expenselist", locals: { expenses: @expenses } %>
-
+<div class="items-list">
+  <%= render partial: "layouts/expenselist", locals: { expenses: @expenses } %>
+</div>
 <%= link_to '/expenses/new/0' do %>
   <span class="pseudo-button green new-expense">New Expense</span>
 <% end %>

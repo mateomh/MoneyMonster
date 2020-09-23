@@ -4,6 +4,9 @@
 <div class="banner">
   <h1 class="font-light-blue">Welcome</h1>
 </div>
+<%= information_rendering %>
+<br>
+<br>
 <div class="main-space">
 <%= form_for(@user,  url: "/access", method: :post) do |form| %>
   <div class="field">
