@@ -32,7 +32,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { redirect_to new_user_path, alert: 'User already exists' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

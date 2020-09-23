@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
 <%= link_to "/users/#{session[:user_id]}" do %>
   <span class="small-button back-button font-light-blue"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></span>
 <% end %>
 <div class="banner">
   <h1>All <%= session[:user_name]%>'s Expenses</h1>
 </div>
+
+<%= information_rendering %>
+
 <div class="object-display total-amount">
     <div class="object-info total">
       <h2>Grand total for expenses:</h2>

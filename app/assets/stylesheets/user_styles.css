@@ -236,3 +236,11 @@ a {
 .group {
   width: 85%;
 }
+
+.information {
+  border: 1px dashed goldenrod;
+  height: 5vh;
+  padding-top: 1vh;
+  font-weight: bolder;
+  font-size: 18px;
+}
