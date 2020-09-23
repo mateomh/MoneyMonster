@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all.ordered_by_name
+    @user = User.find(session[:user_id])
+    @groups = @user.groups.all.ordered_by_name
   end
 
   # GET /groups/1

@@ -1,7 +1,7 @@
 <div class="profile">
   <img class="avatar" src=<%= @user.avatar_url %> />
   <br><br>
-  <h1><%= @user.name %></h1>
+  <h1><%= @user.name.capitalize %></h1>
   <br><br><br>
   <%= link_to '/mytransactions' do %>
     <span class="pseudo-button light-blue">My Expenses</span></a>
@@ -12,7 +12,7 @@
   <% end %>
   <br><br>
   <%= link_to '/groups' do %>
-    <span class="pseudo-button green">My Gropus</span></a>
+    <span class="pseudo-button green">My Groups</span></a>
   <% end %>
   <br><br>
 </div>

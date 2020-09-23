@@ -6,4 +6,10 @@ module ExpensesHelper
       return exp.groups.first.icon
     end
   end
+
+  def expenses_rendering(exps)
+    unless exps.nil?
+      render partial: "layouts/expenselist", locals: { expenses: exps }
+    end
+  end
 end
