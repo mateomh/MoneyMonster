@@ -9,6 +9,6 @@
   <h3>Created on: <%= @expense.created_at.strftime('%e-%b-%Y')%></h3>
   <br>
   <%= link_to @expense_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
-  <span class="pseudo-button control-button red">Delete</span>
-<% end %>
+    <span class="pseudo-button control-button red">Delete</span>
+  <% end %>
 </div>
