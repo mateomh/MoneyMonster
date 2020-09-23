@@ -124,6 +124,14 @@ a {
   padding: 4vh;
 }
 
+.control-button {
+  width: 20%;
+  height: 5vh;
+  line-height: 1;
+  font-size: 20px;
+  padding-top: 1vh;
+}
+
 .text-input {
   border: 1px solid grey;
   height: 50px;
