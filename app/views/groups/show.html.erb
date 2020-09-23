@@ -20,7 +20,9 @@
 
 <h1 class="font-light-blue">Expenses for this group</h1>
 
-<%= render partial: "layouts/expenselist", locals: { expenses: @group_expenses } %>
+<div class="items-list">
+  <%= render partial: "layouts/expenselist", locals: { expenses: @group_expenses } %>
+</div>
 
 <%= link_to "/expenses/new/#{@group.id}" do %>
   <span class="pseudo-button green new-expense">New Expense</span>

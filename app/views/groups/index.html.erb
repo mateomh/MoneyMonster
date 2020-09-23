@@ -8,7 +8,9 @@
 <%= information_rendering %>
 <br><br>
 
-<%= groups_rendering(@groups) %>
+<div class="items-list">
+  <%= groups_rendering(@groups) %>
+</div>
 
 <%= link_to new_group_path do %>
   <span class="pseudo-button green new-expense">New Group</span>
