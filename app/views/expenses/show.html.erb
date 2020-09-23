@@ -6,7 +6,7 @@
   <br><br>
   <h1>Name: <%= @expense.name %></h1>
   <br>
-  <h1>&#128184;: $<%= ActiveSupport::NumberHelper.number_to_delimited(@expense.amount) %></h1>
+  <h1>&#128184; : $<%= ActiveSupport::NumberHelper.number_to_delimited(@expense.amount) %></h1>
   <br>
   <h3>Created on: <%= @expense.created_at.strftime('%e-%b-%Y')%></h3>
   <br>

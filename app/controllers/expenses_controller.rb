@@ -39,7 +39,7 @@ class ExpensesController < ApplicationController
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
         format.json { render :show, status: :created, location: @expense }
       else
-        format.html { redirect_to "/expenses/new/#{group_param[:group_id]}", alert: 'All the fields must be filled' }
+        format.html { redirect_to "/expenses/new/#{group_param[:group_id]}", alert: @expense.errors.full_messages }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
