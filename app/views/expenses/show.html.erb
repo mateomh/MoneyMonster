@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @expense.author_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @expense.name %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @expense.amount %>
-</p>
+<%= link_to expenses_path do %>
+  <span class="small-button back-button font-light-blue"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></span>
+<% end %>
+<div class="banner group-info">
+  <img class="object-image" src=<%= get_group_icon(@expense) %> alt="" />
+  <br><br>
+  <h1>Name: <%= @expense.name %></h1>
+  <br>
+  <h3>Created on: <%= @expense.created_at.strftime('%e-%b-%Y')%></h3>
+</div>
 
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Back', expenses_path %>

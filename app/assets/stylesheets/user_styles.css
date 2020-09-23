@@ -20,6 +20,7 @@ body {
   --color3: #40bad5;
   --color4: #fcbf1e;
   --color5: #79d70f;
+  --color6: #ff414d;
 }
 
 a {
@@ -45,6 +46,10 @@ a {
 
 .font-light-blue {
   color: var(--color3);
+}
+
+.red {
+  background-color: var(--color6);
 }
 
 .dark-blue {
@@ -116,6 +121,7 @@ a {
 .back-button {
   top: 0;
   left: 0;
+  padding: 4vh;
 }
 
 .text-input {
