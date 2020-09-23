@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all.ordered_by_name
+    @user = User.find(session[:user_id])
+    @groups = @user.groups.all.ordered_by_name
   end
 
   # GET /groups/1
@@ -31,7 +32,7 @@ class GroupsController < ApplicationController
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
-        format.html { render :new }
+        format.html { redirect_to new_group_path, alert: @group.errors.full_messages }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end

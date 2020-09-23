@@ -1,41 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= link_to '/groups' do %>
+  <span class="small-button back-button font-light-blue"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></span>
+<% end %>
+<div class="banner group-info">
+  <img class="object-image" src=<%= @group.icon %> alt="" />
+  <br><br>
+  <h1>Group: <%= @group.name %></h1>
+  <br>
+  <h3>Created by: <%= @group.creator.name%></h3>
+  <br>
+  <h3>Created on: <%= @group.created_at.strftime('%e-%b-%Y')%></h3>
+  <br>
+  <%= link_to @group_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <span class="pseudo-button control-button red">Delete</span>
+  <% end %>
+</div>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @group.creator.name %>
-</p>
+<%= information_rendering %>
+<br><br>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+<h1 class="font-light-blue">Expenses for this group</h1>
 
-<p>
-  <strong>Icon:</strong>
-  <%= @group.icon %>
-</p>
+<div class="items-list">
+  <%= render partial: "layouts/expenselist", locals: { expenses: @group_expenses } %>
+</div>
 
-<h1>Expenses for this group</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Expense Description</th>
-      <th>Creation Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @group_expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.name %></td>
-        <td><%= expense.created_at.strftime('%e-%b-%Y') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Create new expense for the group', "/expenses/new/#{@group.id}" %>
-<br>
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to "/expenses/new/#{@group.id}" do %>
+  <span class="pseudo-button green new-expense">New Expense</span>
+<% end %>

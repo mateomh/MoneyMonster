@@ -1,18 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <img src=<% @user.avatar_url %> />
-</p>
-
-<p>
-  <%= link_to 'All My Transactions', '/mytransactions' %><br>
-  <button>All My External Transactions</button><br>
-  <button>All My Groups</button><br>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %>
+<div class="profile">
+  <img class="avatar" src=<%= @user.avatar_url %> />
+  <br><br>
+  <h1><%= @user.name.capitalize %></h1>
+  <br><br><br>
+  <%= link_to '/mytransactions' do %>
+    <span class="pseudo-button light-blue">My Expenses</span></a>
+  <% end %>
+  <br><br>
+  <%= link_to '/myexternal' do %>
+    <span class="pseudo-button orange">External Expenses</span></a>
+  <% end %>
+  <br><br>
+  <%= link_to '/groups' do %>
+    <span class="pseudo-button green">My Groups</span></a>
+  <% end %>
+  <br><br>
+</div>

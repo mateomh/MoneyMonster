@@ -1,33 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= link_to "/users/#{session[:user_id]}" do %>
+  <span class="small-button back-button font-light-blue"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></span>
+<% end %>
+<div class="banner">
+  <h1>All <%= session[:user_name]%>'s Expenses</h1>
+</div>
 
-<h1>All <%= session[:user_name]%>'s Expenses</h1>
-<h2>Grand total for expenses: $<%= @expenses.sum(:amount) %></h2>
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Expense Description</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= information_rendering %>
 
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.author.name %></td>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.created_at.strftime('%e-%b-%Y') %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="object-display total-amount">
+    <div class="object-info total">
+      <h2>Grand total for expenses:</h2>
+    </div>
+    <div class="object-amount total-result">
+      $<%= ActiveSupport::NumberHelper.number_to_delimited(@expenses.sum(:amount)) %>
+    </div>
+</div>
 <br>
-
-<%= link_to 'New Expense', '/expenses/new/0' %>
+<div class="items-list">
+  <%= expenses_rendering(@expenses) %>
+</div>
+<%= link_to '/expenses/new/0' do %>
+  <span class="pseudo-button green new-expense">New Expense</span>
+<% end %>

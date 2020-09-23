@@ -1,29 +1,24 @@
+<%= information_rendering %>
+<br>
+<br>
+<div class="main-space">
 <%= form_with(model: group, local: true) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-        <% group.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= form.hidden_field :creator_id, value: session[:user_id] %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "text-label font-med-blue" %>
+    <br>
+    <%= form.text_field :name, class: "text-input" %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
+    <%= render partial: 'avatar', locals: {form: form }%>
+    <br>
+    <%= form.label :avatar_url,value: "Select the group icon", class: "text-label font-med-blue" %><br>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <br>
+  <div class="actions new-expense">
+    <%= form.submit 'Create New Group', :class => "pseudo-button orange" %>
   </div>
 <% end %>
+</div>
