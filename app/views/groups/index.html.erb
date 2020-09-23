@@ -5,6 +5,9 @@
   <h1><%= session[:user_name].capitalize%>'s Groups</h1>
 </div>
 
+<%= information_rendering %>
+<br><br>
+
 <%= groups_rendering(@groups) %>
 
 <%= link_to new_group_path do %>

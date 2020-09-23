@@ -3,18 +3,6 @@
 <br>
 <div class="main-space">
 <%= form_with(model: group, local: true) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-        <% group.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= form.hidden_field :creator_id, value: session[:user_id] %>
 
   <div class="field">
@@ -24,9 +12,9 @@
   </div>
   <br>
   <div class="field">
-    <%= form.label :icon, class: "text-label font-med-blue" %>
+    <%= render partial: 'avatar', locals: {form: form }%>
     <br>
-    <%= form.text_field :icon, class: "text-input" %>
+    <%= form.label :avatar_url,value: "Select the group icon", class: "text-label font-med-blue" %><br>
   </div>
   <br>
   <div class="actions new-expense">
