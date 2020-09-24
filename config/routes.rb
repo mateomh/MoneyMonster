@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   get '/mytransactions', to: 'expenses#index'
   get '/myexternal', to: 'expenses#my_external'
-  # get '/mygroups', to: 'groups#my_groups'
 
   # Custom root page for the application
   root 'application#index'

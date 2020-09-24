@@ -8,7 +8,7 @@ RSpec.describe 'users/index', type: :view do
                avatar_url: 'Avatar Url'
              ),
              User.create!(
-               name: 'Name',
+               name: 'Name2',
                avatar_url: 'Avatar Url'
              )
            ])
@@ -16,7 +16,8 @@ RSpec.describe 'users/index', type: :view do
 
   it 'renders a list of users' do
     render
-    assert_select 'tr>td', text: 'Name'.to_s, count: 2
+    assert_select 'tr>td', text: 'Name'.to_s, count: 1
+    assert_select 'tr>td', text: 'Name2'.to_s, count: 1
     assert_select 'tr>td', text: 'Avatar Url'.to_s, count: 2
   end
 end
