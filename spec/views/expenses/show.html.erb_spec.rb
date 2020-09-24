@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'expenses/show', type: :view do
   before(:each) do
     @expense = assign(:expense, Expense.create!(
-                                  author_id: 2,
+                                  author_id: User.last.id,
                                   name: 'Name',
                                   amount: 3.5
                                 ))

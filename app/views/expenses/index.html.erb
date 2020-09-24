@@ -12,13 +12,11 @@
       <h2>Grand total for expenses:</h2>
     </div>
     <div class="object-amount total-result">
-      $<%= ActiveSupport::NumberHelper.number_to_delimited(@expenses.sum(:amount)) %>
+      $<%= ActiveSupport::NumberHelper.number_to_delimited(@expenses.total_amount) %>
     </div>
 </div>
 <br>
 <div class="items-list">
   <%= expenses_rendering(@expenses) %>
 </div>
-<%= link_to '/expenses/new/0' do %>
-  <span class="pseudo-button green new-expense">New Expense</span>
-<% end %>
+<span class="pseudo-button green new-expense">New Expense</span>

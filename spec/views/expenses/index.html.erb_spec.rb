@@ -1,25 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'expenses/index', type: :view do
-  before(:each) do
-    assign(:expenses, [
-             Expense.create!(
-               author_id: 2,
-               name: 'Name',
-               amount: 3.5
-             ),
-             Expense.create!(
-               author_id: 2,
-               name: 'Name',
-               amount: 3.5
-             )
-           ])
-  end
-
+RSpec.describe ExpensesController, type: :controller do
   it 'renders a list of expenses' do
-    render
-    assert_select 'tr>td', text: 2.to_s, count: 2
-    assert_select 'tr>td', text: 'Name'.to_s, count: 2
-    assert_select 'tr>td', text: 3.5.to_s, count: 2
+    session[:user_name] = User.last.name
+    session[:user_id] = User.last.id
+    session[:avatar] = User.last.avatar_url
+    get :index
+    expect(response).to render_template('index')
   end
 end

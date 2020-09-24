@@ -10,7 +10,7 @@
   <br>
   <h3>Created on: <%= @group.created_at.strftime('%e-%b-%Y')%></h3>
   <br>
-  <%= link_to @group_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+  <%= link_to group_path(@group.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
     <span class="pseudo-button control-button red">Delete</span>
   <% end %>
 </div>
