@@ -2,8 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'groups/edit', type: :view do
   before(:each) do
+    session[:user_name] = User.last.name
+    session[:user_id] = User.last.id
+    session[:avatar] = User.last.avatar_url
     @group = assign(:group, Group.create!(
-                              creator_id: 1,
+                              creator_id: User.first.id,
                               name: 'MyString',
                               icon: 'MyString'
                             ))
