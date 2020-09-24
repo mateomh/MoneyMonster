@@ -10,4 +10,8 @@ module ExpensesHelper
   def expenses_rendering(exps)
     render partial: 'layouts/expenselist', locals: { expenses: exps } unless exps.nil?
   end
+
+  def total_expenses(exps)
+    exps.total_amount
+  end
 end

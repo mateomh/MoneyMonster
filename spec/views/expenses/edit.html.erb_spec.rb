@@ -2,8 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'expenses/edit', type: :view do
   before(:each) do
+    session[:user_name] = User.last.name
+    session[:user_id] = User.last.id
+    session[:avatar] = User.last.avatar_url
     @expense = assign(:expense, Expense.create!(
-                                  author_id: 1,
+                                  author_id: User.last.id,
                                   name: 'MyString',
                                   amount: 1.5
                                 ))

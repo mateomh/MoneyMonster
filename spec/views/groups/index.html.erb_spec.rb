@@ -2,15 +2,18 @@ require 'rails_helper'
 
 RSpec.describe 'groups/index', type: :view do
   before(:each) do
+    session[:user_name] = User.last.name
+    session[:user_id] = User.last.id
+    session[:avatar] = User.last.avatar_url
     assign(:groups, [
              Group.create!(
-               creator_id: 2,
+               creator_id: User.last.id,
                name: 'Name',
                icon: 'Icon'
              ),
              Group.create!(
-               creator_id: 2,
-               name: 'Name',
+               creator_id: User.last.id,
+               name: 'Name2',
                icon: 'Icon'
              )
            ])
@@ -18,8 +21,7 @@ RSpec.describe 'groups/index', type: :view do
 
   it 'renders a list of groups' do
     render
-    assert_select 'tr>td', text: 2.to_s, count: 2
-    assert_select 'tr>td', text: 'Name'.to_s, count: 2
-    assert_select 'tr>td', text: 'Icon'.to_s, count: 2
+    assert_select 'div>h3', text: 'Name'.to_s, count: 1
+    assert_select 'h3', text: 'Name2'.to_s, count: 1
   end
 end
