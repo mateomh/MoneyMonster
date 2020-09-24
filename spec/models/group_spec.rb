@@ -13,17 +13,17 @@ RSpec.describe Group, type: :model do
   end
 
   it '1. Checks for the group name content validation' do
-    g = Group.create(name:'<$%#>',creator_id: @test_u.id)
+    g = Group.create(name: '<$%#>', creator_id: @test_u.id)
     expect(g).to be_invalid
   end
 
   it '2. Checks for the group name uniqueness validation' do
-    g = Group.create(name:'test group',creator_id: @test_u.id)
+    g = Group.create(name: 'test group', creator_id: @test_u.id)
     expect(g).to be_invalid
   end
 
   it '3. Checks for the group name presence validation' do
-    g = Group.create(name: nil,creator_id: @test_u.id)
+    g = Group.create(name: nil, creator_id: @test_u.id)
     expect(g).to be_invalid
   end
 
@@ -32,7 +32,7 @@ RSpec.describe Group, type: :model do
   end
 
   it '5. Checks for the group and user models association' do
-    expect{ @test_g.creator }.not_to raise_error
+    expect { @test_g.creator }.not_to raise_error
   end
 
   it '6. Checks the scope ordered_by_name' do

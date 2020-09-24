@@ -15,24 +15,24 @@ RSpec.describe Expense, type: :model do
     @test_g = Group.first
     Groupedtransaction.create(group_id: @test_g.id, expense_id: @test_e.id)
   end
-  
+
   it '1. Checks for the precense validation for both fields' do
     e = Expense.create(name: nil, amount: nil, author_id: @test_u.id)
     expect(e).to be_invalid
   end
 
   it '2. Checks for the name content validation' do
-    e = Expense.create(name:'<$%#>', amount: 50.0, author_id: @test_u.id)
+    e = Expense.create(name: '<$%#>', amount: 50.0, author_id: @test_u.id)
     expect(e).to be_invalid
   end
 
   it '3. Checks for the amount content validation' do
-    e = Expense.create(name:'test expense', amount: "aaa", author_id: @test_u.id)
+    e = Expense.create(name: 'test expense', amount: 'aaa', author_id: @test_u.id)
     expect(e).to be_invalid
   end
 
   it '4. Checks the successful expense creation' do
-    e = Expense.create(name:'test expense', amount: 50.0, author_id: @test_u.id)
+    e = Expense.create(name: 'test expense', amount: 50.0, author_id: @test_u.id)
     expect(e).to be_valid
   end
 
@@ -50,6 +50,6 @@ RSpec.describe Expense, type: :model do
   end
 
   it '8. Checks the stand_alone_expenses scope' do
-    expect{ @test_u.expenses.stand_alone_expenses }.not_to raise_error
+    expect { @test_u.expenses.stand_alone_expenses }.not_to raise_error
   end
 end

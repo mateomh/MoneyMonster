@@ -12,17 +12,17 @@ RSpec.describe User, type: :model do
   end
 
   it '1. Checks for the user name precense validation' do
-    u = User.create(name:nil)
+    u = User.create(name: nil)
     expect(u).to be_invalid
   end
 
   it '2. Checks for the user name content validation' do
-    u = User.create(name:'<$%#>')
+    u = User.create(name: '<$%#>')
     expect(u).to be_invalid
   end
 
   it '3. Checks for the unique user name validation' do
-    u = User.create(name:'mateo')
+    u = User.create(name: 'mateo')
     expect(u).to be_invalid
   end
 
