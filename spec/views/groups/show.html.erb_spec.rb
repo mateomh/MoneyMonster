@@ -18,7 +18,5 @@ RSpec.describe 'groups/show', type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Icon/)
-    # get :index
-    # expect(response).to render_template('index')
   end
 end
