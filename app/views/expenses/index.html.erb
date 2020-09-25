@@ -27,4 +27,7 @@
 <div class="items-list">
   <%= expenses_rendering(@expenses) %>
 </div>
-<span class="pseudo-button green new-expense">New Expense</span>
+
+<%= link_to '/expenses/new/0' do %>
+  <span class="pseudo-button green new-expense">New Expense</span>
+<% end %>
