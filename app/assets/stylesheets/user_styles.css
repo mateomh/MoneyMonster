@@ -103,6 +103,7 @@ a {
   font-weight: 700;
   font-size: 5vh;
   line-height: 75px;
+  padding-top: 2vh;
 }
 
 .small-button {
@@ -174,6 +175,7 @@ a {
   padding-top: 5vh;
   font-weight: bolder;
   margin-bottom: 5vh;
+  font-size: 2vh;
 }
 
 .object-display {
