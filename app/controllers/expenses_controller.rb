@@ -4,14 +4,15 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def my_external
-    @user = User.find(session[:user_id])
-    @expenses = @user.expenses.stand_alone_expenses.ordered_by_most_recent
+    @user = User.includes(:expenses, :groups).find(session[:user_id])
+    @expenses = @user.expenses.includes(:groups, :author).stand_alone_expenses.ordered_by_most_recent
     render 'index'
   end
 
+  # /mytransactions
   def index
-    @user = User.find(session[:user_id])
-    @expenses = @user.expenses.all.ordered_by_most_recent
+    @user = User.includes(:expenses, :groups).find(session[:user_id])
+    @expenses = @user.expenses.includes(:groups, :author).ordered_by_most_recent
   end
 
   # GET /expenses/1
