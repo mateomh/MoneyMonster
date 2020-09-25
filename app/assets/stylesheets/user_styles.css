@@ -101,7 +101,7 @@ a {
   color: whitesmoke;
   text-align: center;
   font-weight: 700;
-  font-size: 5vh;
+  font-size: 3.5vh;
   line-height: 75px;
   padding-top: 2vh;
 }
@@ -201,7 +201,7 @@ a {
 .object-info {
   display: inline-block;
   width: 50%;
-  padding-top: 5vh;
+  padding-top: 3vh;
   padding-left: 5%;
   color: grey;
   font-size: 2vh;
@@ -211,10 +211,10 @@ a {
   display: inline-block;
   width: 30%;
   text-align: center;
-  padding-top: 7vh;
+  padding-top: 5vh;
   font-weight: bolder;
   color: green;
-  font-size: 3vh;
+  font-size: 2.5vh;
 }
 
 .total-amount {

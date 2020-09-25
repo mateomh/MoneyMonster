@@ -5,13 +5,14 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @user = User.find(session[:user_id])
-    @groups = @user.groups.ordered_by_name
+    # @groups = @user.groups.ordered_by_name
+    @groups = Group.all.ordered_by_name
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @group_expenses = @group.expenses.includes(:groupedtransactions, :groups).ordered_by_most_recent
+    @group_expenses = @group.expenses.includes(:groupedtransactions, :groups, :author).ordered_by_most_recent
   end
 
   # GET /groups/new
