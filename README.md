@@ -1,13 +1,13 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 ![](https://img.shields.io/badge/-Made%20with%20RubyonRails-red)
 
-# Money Monster
+# Money Monster - Mobile App
 
 > This project is an expense tracker where you can enter every expense that you make as independent, or you can group expenses by category.
 
 ![main page](./screenshots/main.png)
 
-This project is a Capstone Project for the Microverse Rails technical curriculum. The idea is to make the backend and the front end of the application to keep track of the expenses a user makes. The expenses can be stand-alone or by a group and the app allows the user to create new groups and new expenses for them or create a stand-alone expense. 
+This project is a Capstone Project for the Microverse Rails technical curriculum. The idea is to make the backend and the mobile front end of the application to keep track of the expenses a user makes. The expenses can be stand-alone or by a group and the app allows the user to create new groups and new expenses for them or create a stand-alone expense. 
 
 ## Built With
 

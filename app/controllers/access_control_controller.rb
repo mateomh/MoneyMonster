@@ -3,7 +3,7 @@ class AccessControlController < ApplicationController
     valid_user = User.where(name: params[:user][:name])
     if valid_user.empty?
       flash.notice = "User doesn't exists"
-      redirect_to valid_user_path
+      redirect_to users_path
     else
       session[:user_name] = params[:user][:name]
       session[:user_id] = valid_user[0].id
