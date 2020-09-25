@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'groups/index', type: :view do
   before(:each) do
+    User.create(name: 'mateo')
     session[:user_name] = User.last.name
     session[:user_id] = User.last.id
     session[:avatar] = User.last.avatar_url
