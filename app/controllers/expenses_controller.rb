@@ -9,7 +9,8 @@ class ExpensesController < ApplicationController
     render 'index'
   end
 
-  def index #/mytransactions
+  # /mytransactions
+  def index
     @user = User.includes(:expenses, :groups).find(session[:user_id])
     @expenses = @user.expenses.includes(:groups, :author).ordered_by_most_recent
   end
