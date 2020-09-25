@@ -1,7 +1,7 @@
 <div class="profile">
   <img class="avatar" src=<%= @user.avatar_url %> />
   <br><br>
-  <h1><%= @user.name.capitalize %></h1>
+  <h1 class="user-name"><%= @user.name.capitalize %></h1>
   <br><br><br>
   <%= link_to '/mytransactions' do %>
     <span class="pseudo-button light-blue">My Expenses</span></a>
