@@ -186,6 +186,7 @@ a {
   border: 1px solid grey;
   margin: 3vh auto;
   background-color: whitesmoke;
+  line-height: 3vh;
 }
 
 .object-image {
