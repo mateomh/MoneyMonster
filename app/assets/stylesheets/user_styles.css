@@ -82,7 +82,7 @@ a {
 
 .main-title {
   height: 70vh;
-  font-size: 6rem;
+  font-size: 14vh;
   padding-top: 20vh;
   line-height: 100px;
   font-family: 'Parisienne', cursive;
@@ -101,7 +101,7 @@ a {
   color: whitesmoke;
   text-align: center;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 5vh;
   line-height: 75px;
 }
 
@@ -113,7 +113,7 @@ a {
   border: none;
   text-align: center;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2.5vh;
   padding-top: 5vh;
 }
 
@@ -127,7 +127,7 @@ a {
   width: 20%;
   height: 5vh;
   line-height: 1;
-  font-size: 20px;
+  font-size: 3vh;
   padding-top: 1vh;
 }
 
@@ -137,12 +137,12 @@ a {
   width: 80%;
   border-radius: 5px;
   padding: 2vh;
-  font-size: 20px;
+  font-size: 5vh;
   text-align: center;
 }
 
 .text-label {
-  font-size: 2rem;
+  font-size: 4vh;
   font-weight: bolder;
 }
 
@@ -206,7 +206,7 @@ a {
   padding-top: 7vh;
   font-weight: bolder;
   color: green;
-  font-size: 16px;
+  font-size: 3vh;
 }
 
 .total-amount {
@@ -222,7 +222,7 @@ a {
 .total-result {
   width: 40%;
   padding-top: 3vh;
-  font-size: 20px;
+  font-size: 3vh;
 }
 
 .new-expense {
@@ -245,7 +245,7 @@ a {
   height: 5vh;
   padding-top: 1vh;
   font-weight: bolder;
-  font-size: 18px;
+  font-size: 3vh;
 }
 
 .items-list {
