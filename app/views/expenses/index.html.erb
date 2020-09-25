@@ -12,7 +12,7 @@
       <h2>Grand total for expenses:</h2>
     </div>
     <div class="object-amount total-result">
-      $<%= ActiveSupport::NumberHelper.number_to_delimited(@expenses.total_amount) %>
+      <%= ActiveSupport::NumberHelper.number_to_currency(@expenses.total_amount.round(2)) %>
     </div>
 </div>
 <br>
