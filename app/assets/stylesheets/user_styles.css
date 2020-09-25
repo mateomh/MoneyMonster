@@ -175,7 +175,7 @@ a {
   padding-top: 5vh;
   font-weight: bolder;
   margin-bottom: 5vh;
-  font-size: 2vh;
+  font-size: 1.5vh;
 }
 
 .object-display {
@@ -199,6 +199,7 @@ a {
   padding-top: 5vh;
   padding-left: 5%;
   color: grey;
+  font-size: 2vh;
 }
 
 .object-amount {
