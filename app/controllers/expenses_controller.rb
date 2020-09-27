@@ -39,10 +39,8 @@ class ExpensesController < ApplicationController
           Groupedtransaction.create(expense_id: @expense.id, group_id: group_param[:group_id])
         end
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
       else
         format.html { redirect_to "/expenses/new/#{group_param[:group_id]}", alert: @expense.errors.full_messages }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,10 +51,8 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.update(expense_params)
         format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
       else
         format.html { render :edit }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -67,7 +63,6 @@ class ExpensesController < ApplicationController
     @expense.destroy
     respond_to do |format|
       format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
