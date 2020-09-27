@@ -26,9 +26,6 @@ class ExpensesController < ApplicationController
     @group = params[:group]
   end
 
-  # GET /expenses/1/edit
-  def edit; end
-
   # POST /expenses
   # POST /expenses.json
   def create
@@ -41,18 +38,6 @@ class ExpensesController < ApplicationController
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
       else
         format.html { redirect_to "/expenses/new/#{group_param[:group_id]}", alert: @expense.errors.full_messages }
-      end
-    end
-  end
-
-  # PATCH/PUT /expenses/1
-  # PATCH/PUT /expenses/1.json
-  def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
-      else
-        format.html { render :edit }
       end
     end
   end

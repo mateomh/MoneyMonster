@@ -21,9 +21,6 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  # GET /groups/1/edit
-  def edit; end
-
   # POST /groups
   # POST /groups.json
   def create
@@ -34,18 +31,6 @@ class GroupsController < ApplicationController
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
       else
         format.html { redirect_to new_group_path, alert: @group.errors.full_messages }
-      end
-    end
-  end
-
-  # PATCH/PUT /groups/1
-  # PATCH/PUT /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-      else
-        format.html { render :edit }
       end
     end
   end

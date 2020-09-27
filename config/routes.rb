@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :groups
-  resources :expenses
-  resources :users
+  resources :groups, except: [:update, :edit]
+  resources :expenses, except: [:update, :edit]
+  resources :users, except: [:update, :edit]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   # Custom endpoints for the app

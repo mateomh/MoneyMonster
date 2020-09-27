@@ -19,9 +19,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
-  def edit; end
-
   # POST /users
   # POST /users.json
   def create
@@ -32,18 +29,6 @@ class UsersController < ApplicationController
         format.html { redirect_to '/users', notice: 'User was successfully created.' }
       else
         format.html { redirect_to new_user_path, alert: 'User already exists' }
-      end
-    end
-  end
-
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-      else
-        format.html { render :edit }
       end
     end
   end
