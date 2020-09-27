@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
+  before_action :check_login
 
   # GET /expenses
   # GET /expenses.json
@@ -84,5 +85,9 @@ class ExpensesController < ApplicationController
 
   def group_param
     params.require(:expense).permit(:group_id)
+  end
+
+  def check_login
+    redirect_to root_path if session[:user_name].nil?
   end
 end

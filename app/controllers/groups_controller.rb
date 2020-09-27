@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[show edit update destroy]
+  before_action :check_login
 
   # GET /groups
   # GET /groups.json
@@ -73,5 +74,9 @@ class GroupsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def group_params
     params.require(:group).permit(:creator_id, :name, :icon)
+  end
+
+  def check_login
+    redirect_to root_path if session[:user_name].nil?
   end
 end
