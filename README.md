@@ -99,6 +99,17 @@ rails db:create
 
 rails db:migrate
 ```
+
+### Run the Tests
+
+This project comes with a suite of test with it. You can run them all by opening a terminal in the root folder and excecuting the following command
+
+```
+rspec
+```
+
+You will see the results of all the test in your command line.
+
 ### Run the app
 
 To run the app you should run this command in the terminal that you opened earlier.
