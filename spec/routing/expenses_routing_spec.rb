@@ -14,20 +14,8 @@ RSpec.describe ExpensesController, type: :routing do
       expect(get: '/expenses/1').to route_to('expenses#show', id: '1')
     end
 
-    it 'routes to #edit' do
-      expect(get: '/expenses/1/edit').to route_to('expenses#edit', id: '1')
-    end
-
     it 'routes to #create' do
       expect(post: '/expenses').to route_to('expenses#create')
-    end
-
-    it 'routes to #update via PUT' do
-      expect(put: '/expenses/1').to route_to('expenses#update', id: '1')
-    end
-
-    it 'routes to #update via PATCH' do
-      expect(patch: '/expenses/1').to route_to('expenses#update', id: '1')
     end
 
     it 'routes to #destroy' do
