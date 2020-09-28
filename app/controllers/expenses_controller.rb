@@ -45,9 +45,12 @@ class ExpensesController < ApplicationController
   # DELETE /expenses/1
   # DELETE /expenses/1.json
   def destroy
-    @expense.destroy
     respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      if @expense.destroy
+        format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      else
+        format.html { redirect_to expenses_url, notice: "Expense couldn't be destroyed." }
+      end
     end
   end
 
