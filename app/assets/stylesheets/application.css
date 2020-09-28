@@ -1,0 +1,185 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gainsboro;
+  text-align: center;
+  margin: 0;
+  color: whitesmoke;
+  font-family: 'Rubik', sans-serif;
+}
+
+:root {
+  --color1: #120136;
+  --color2: #035aa6;
+  --color3: #40bad5;
+  --color4: #fcbf1e;
+  --color5: #79d70f;
+  --color6: #ff414d;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.font-orange {
+  color: var(--color4);
+}
+
+.font-green {
+  color: var(--color5);
+}
+
+.font-dark-blue {
+  color: var(--color1);
+}
+
+.font-med-blue {
+  color: var(--color2);
+}
+
+.font-light-blue {
+  color: var(--color3);
+}
+
+.red {
+  background-color: var(--color6);
+}
+
+.dark-blue {
+  background-color: var(--color1);
+}
+
+.light-blue {
+  background-color: var(--color3);
+}
+
+.med-blue {
+  background-color: var(--color2);
+}
+
+.green {
+  background-color: var(--color5);
+}
+
+.orange {
+  background-color: var(--color4);
+}
+
+.welcome-view {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  align-items: stretch;
+  text-align: center;
+}
+
+.main-title {
+  height: 70vh;
+  font-size: 14vh;
+  padding-top: 20vh;
+  line-height: 15vh;
+  font-family: 'Parisienne', cursive;
+}
+
+.button-section {
+  height: 15vh;
+  padding-top: 1%;
+}
+
+.pseudo-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 80%;
+  border: none;
+  color: whitesmoke;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3.5vh;
+  margin: 0 auto;
+}
+
+.small-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5vh;
+  padding-top: 5vh;
+}
+
+.back-button {
+  top: 0;
+  left: 0;
+  padding: 4vh;
+}
+
+.control-button {
+  width: 20%;
+  height: 5vh;
+  line-height: 1;
+  font-size: 3vh;
+  padding-top: 1vh;
+}
+
+.text-input {
+  border: 1px solid grey;
+  height: 50px;
+  width: 80%;
+  border-radius: 5px;
+  padding: 2vh;
+  font-size: 5vh;
+  text-align: center;
+}
+
+.text-label {
+  font-size: 4vh;
+  font-weight: bolder;
+}
+
+.main-space {
+  padding-top: 7vh;
+}
+
+.banner {
+  background-color: var(--color2);
+  height: 15vh;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 5vh;
+  font-weight: bolder;
+  margin-bottom: 5vh;
+  font-size: 1.5vh;
+}
+
+.radio-default {
+  display: none;
+}

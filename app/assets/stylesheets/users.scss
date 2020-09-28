@@ -1,0 +1,23 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user-form {
+  padding-top: 1vh;
+}
+
+.profile {
+  padding-top: 5vh;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(farthest-corner at 90% 10%, var(--color1), var(--color2));
+}
+
+.avatar {
+  width: 30vh;
+  border-radius: 100%;
+}
+
+.user-name {
+  font-size: 5vh;
+}

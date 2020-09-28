@@ -1,0 +1,36 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.banner.group-info {
+  height: 45vh;
+}
+
+.group {
+  width: 85%;
+}
+
+.information {
+  border: 1px dashed goldenrod;
+  height: 5vh;
+  padding-top: 1vh;
+  font-weight: bolder;
+  font-size: 5vh;
+}
+
+.items-list {
+  padding-bottom: 15vh;
+}
+
+.avatar-img {
+  width: 80px;
+  height: 80px;
+}
+
+.selecting-avatar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  gap: 1vh;
+}

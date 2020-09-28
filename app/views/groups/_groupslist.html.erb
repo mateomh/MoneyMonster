@@ -1,0 +1,11 @@
+<% groups.each do |group| %>
+  <%= link_to group do %></td>
+    <div class="object-display">
+      <img class="object-image" src=<%= group.icon %> alt="" />
+      <div class="object-info group">
+        <h3><%= group.name %></h3>
+        <%= group.created_at.strftime('%e-%b-%Y') %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

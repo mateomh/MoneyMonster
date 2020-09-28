@@ -1,0 +1,33 @@
+<%= link_to "/users/#{session[:user_id]}" do %>
+  <span class="small-button back-button font-light-blue"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></span>
+<% end %>
+<div class="banner">
+  <h1>All <%= session[:user_name]%>'s Expenses</h1>
+</div>
+
+<%= information_rendering %>
+
+<div class="object-display total-amount">
+    <div class="object-info total">
+      <h2>Grand total for expenses:</h2>
+    </div>
+    <div class="object-amount total-result">
+      <%= ActiveSupport::NumberHelper.number_to_currency(@expenses.total_amount.round(2)) %>
+    </div>
+</div>
+<div class="object-display total-amount">
+    <div class="object-info total">
+      <h2>Total expenses for <%= Date.today.strftime('%B')%>:</h2>
+    </div>
+    <div class="object-amount total-result">
+      <%= ActiveSupport::NumberHelper.number_to_currency(@expenses.for_the_month.total_amount.round(2)) %>
+    </div>
+</div>
+<br>
+<div class="items-list">
+  <%= expenses_rendering(@expenses) %>
+</div>
+
+<%= link_to '/expenses/new/0' do %>
+  <span class="pseudo-button green new-expense">New Expense</span>
+<% end %>

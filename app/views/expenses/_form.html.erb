@@ -1,0 +1,24 @@
+<%= information_rendering %>
+<br>
+<br>
+<div class="main-space">
+<%= form_with(model: expense, local: true) do |form| %>
+  <%= form.hidden_field :author_id, value: session[:user_id] %>
+  <%= form.hidden_field :group_id, value: @group %>
+  <div class="field">
+    <%= form.label :name, value: 'Description of the expense', class: "text-label font-med-blue" %>
+    <br>
+    <%= form.text_field :name, class: "text-input" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :amount, class: "text-label font-med-blue" %>
+    <br>
+    <%= form.number_field :amount, min: 0.1 , max: 100000000, step: 0.01, class: "text-input" %>
+  </div>
+  <br><br>
+  <div class="actions new-expense">
+    <%= form.submit 'Create Expense', :class => "pseudo-button orange"%>
+  </div>
+<% end %>
+</div>
