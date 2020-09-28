@@ -14,10 +14,6 @@
  *= require_self
  */
 
-@import "expenses.scss";
-@import "groups.scss";
-@import "users.scss";
-
 *,
 *::before,
 *::after {
