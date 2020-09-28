@@ -181,3 +181,7 @@ a {
   margin-bottom: 5vh;
   font-size: 1.5vh;
 }
+
+.radio-default {
+  display: none;
+}
