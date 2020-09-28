@@ -26,7 +26,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/users', notice: 'User was successfully created.' }
+        session[:user_name] = @user.name
+        session[:user_id] = @user.id
+        session[:avatar] = @user.avatar_url
+        format.html { redirect_to "/users/#{@user.id}", notice: 'User was successfully created.' }
       else
         format.html { redirect_to new_user_path, alert: 'User already exists' }
       end
