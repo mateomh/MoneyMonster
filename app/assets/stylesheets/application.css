@@ -114,7 +114,10 @@ a {
 }
 
 .pseudo-button {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 10vh;
   width: 80%;
   border: none;
@@ -122,8 +125,7 @@ a {
   text-align: center;
   font-weight: 700;
   font-size: 3.5vh;
-  line-height: 75px;
-  padding-top: 2vh;
+  margin: 0 auto;
 }
 
 .small-button {
